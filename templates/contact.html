@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container-fluid px-0 my-0">
+    <img src="/static/contact.jpg " height="400">
+</div>
+<div class="text-center my-4">
+    <h2>Contact us by filling below information</h2>
+</div>
+<div class="container my-4">
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="phone" class="form-label">Phone no.</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+        </div>
+        <div class="form-group">
+            <label for="desc" class="form-label">What do you want to contact us for..</label>
+            <textarea class="form-control" id="desc" name="desc" placeholder="Enter text" rows="3"></textarea>
+        </div>
+        <div class="my-4"> 
+        <button class="btn btn-primary" type="submit">Submit information</button>
+        </div>
+    </form>
+</div>
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h6 class="border-bottom pb-2 mb-0"><font color="purple">You can also reach us at</font></h6>
+    <div class="d-flex text-muted pt-3">
+      <img src="/static/insta.png" height="32">
+
+      <p class="pb-3 mb-2 small lh-sm border-bottom px-2">
+        <strong class="d-block text-gray-dark">@real.Gulati_Icecream</strong>
+        Our Instagram handel
+      </p>
+    </div>
+    <div class="d-flex text-muted pt-3">
+        <img src="/static/fb.png" height="32">
+      <p class="pb-3 mb-2 small lh-sm border-bottom px-2">
+        <strong class="d-block text-gray-dark">@Gulati_Icecream</strong>
+       Our Facebook handle
+      </p>
+    </div>
+    <div class="d-flex text-muted pt-3">
+        <img src="/static/gmail.png" height="32">
+      <p class="pb-3 mb-2 small lh-sm border-bottom px-2">
+        <strong class="d-block text-gray-dark">Gulati_Icecream@gmail.com</strong>
+        Official Email address
+      </p>
+    </div>
+  </div>
+{% endblock body %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<h3 class=" pb-2 mb-0 px-3 my-3"><font color="DeepPink ">Don't know which Ice-cream to Try?We got you covered.</font></h3>
+<h3 class="border-bottom pb-2 mb-0 px-3 my-1"><font color="brown" >Take our Ice-cream prediction Test!</font></h3>
+<form method="post" action="/prediction">
+    {% csrf_token %}
+    <div class="form-group my-3 px-3">
+  <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+    <option selected>Select age group...</option>
+    <option value="1">Below 12</option>
+    <option value="2">12 to 25</option>
+    <option value="3">25 to 45</option>
+    <option value="4">Above 45</option>
+  </select>
+    </div>
+    <div class="form-group my-3 px-3">
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+            <option selected>Select Gender</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+          </select>
+    </div>
+    <div class="form-group  my-3 px-3">
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+            <option selected>Choose your protein preference</option>
+            <option value="1">High Protein</option>
+            <option value="2">Doesn't matter</option>
+          </select>
+    </div>
+    <div class="form-group  my-3 px-3">
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+            <option selected>Select Texture</option>
+            <option value="1">Creamy</option>
+            <option value="2">Nutty</option>
+          </select>
+    </div>
+    <div class="form-group  my-3 px-3">
+        <select class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+            <option selected>Select Fat content preference</option>
+            <option value="1">Low Fat</option>
+            <option value="2">High Fat</option>
+          </select>
+    </div>
+</form>
+{% endblock body %}

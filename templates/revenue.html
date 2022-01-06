@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<h3 class=" pb-2 mb-0 px-3 my-3"><font color="DarkOrchid">Want to know how outside temperature affects our sales?</font></h3>
+<h3 class="border-bottom pb-2 mb-0 px-3 my-1"><font color="CadetBlue">Take our Revenue prediction Test!</font></h3>
+<form method="POST" action="/revenueprediction">
+    {% csrf_token %}
+    <div class="form-group px-3 my-5 ">
+        <label for="temperature" class="form-label">Enter outside Temperature</label>
+        <input type="number" class="form-control" id="temperature" name="temperature" placeholder="Enter Temperature in Celsius(°C)">
+    </div>
+    <div class="text-center">
+        <input type="submit" value="Submit Value" class="btn btn-warning btn-lg px-10">   
+    </div>
+ 
+</form>
+{% if scoreval %}
+<h3><font class="px-3 my-10"color="Maroon">Revenue is {{scoreval}}(in Millions)</font></h3>
+{% endif %}
+
+{% endblock body %}
