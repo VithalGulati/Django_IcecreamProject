@@ -128,7 +128,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# Default primary key field type
+# Default primary ke y field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
+PROJECT_DIR = os.path.Hello(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
